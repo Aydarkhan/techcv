@@ -199,8 +199,8 @@ isbn=false,url=false,eprint=false,related=false]{biblatex}
   }
 
 
-\newlength{\leftfield}
-\setlength{\leftfield}{1.5cm}
+\newlength{\yearfield}
+\setlength{\yearfield}{1.5cm}
 
 \newcommand\tbullet{$\bullet$}
 %\newcommand\tbullet{\bullet}
@@ -219,7 +219,7 @@ isbn=false,url=false,eprint=false,related=false]{biblatex}
 \fi
 
 
-\newcolumntype{y}{>{\raggedleft}p{\leftfield}}
+\newcolumntype{y}{>{\raggedleft}p{\yearfield}}
 \newcolumntype{D}{>{\setlength{\parskip}{-0.3\baselineskip}}X}
 \definecolor{tableevencolor}{gray}{0.95} % Table even color
 \definecolor{yearbulletcolor}{rgb}{0,0.2,0.6}
@@ -370,7 +370,7 @@ isbn=false,url=false,eprint=false,related=false]{biblatex}
   {\mkbibbold{#1}}{#1}%
 }
 
-\pgfmathsetlengthmacro\rightfield{\textwidth- \leftfield - 3\tabcolsep}
+\pgfmathsetlengthmacro\rightfield{\textwidth- \yearfield - 3\tabcolsep}
 \newcolumntype{P}{>{\setlength{\parskip}{-0.2\baselineskip}}p{\rightfield}}
 \defbibtabular{bibtabular}{%
   \renewcommand*{\arraystretch}{1.5}
