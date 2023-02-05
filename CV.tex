@@ -1,0 +1,177 @@
+\documentclass[letterpaper, 10pt, yearbullet]{techcv}
+%\documentclass[letterpaper, 10pt]{techcv}
+%\selectcolormodel{gray}
+
+\usepackage{lipsum} 
+
+\usepackage{paracol}
+
+% Personal info
+\author{Surname}{Name}{N.}
+\addbibresource{publications.bib}
+
+\position{Position}
+\email{name.surname@xxx.com}
+\linkedin{namesurname}
+\visa{Visa holder}
+
+\setlength{\columnseprule}{1pt}
+\setlength\columnsep{15pt}
+%\colseprulecolor{blue}
+
+
+\begin{document}
+
+\maketitle
+
+\columnratio{0.73}
+\begin{paracol}{2}
+
+\begin{summary}
+\item{Main line}
+    {\lipsum[66]}
+
+\item{Education}
+	{MIT (diploma with Honors).}
+
+\item{Skills}{ML, DL, Python, C++.}
+
+\item{Highlights}
+	{Nobel prize awardee.}
+    %\item{Highlights}{Grantee of EFPL Excellence Fellowship, 4th place in ML competition, invited}
+\end{summary}
+
+
+\section{Experience}
+
+\begin{joblist}
+\yearitem{Jan 2020}{present}{Current position}
+	{Company}{Place}
+    {\lipsum[66]}
+
+\yearitem{Feb 2010}{Jan 2020}{Position 0}
+	{Company}{Place}
+    {%
+	\begin{itemize}
+		\item Responsibility 1 Responsibility 1 Responsibility 1 Responsibility 1
+		\item Responsibility 2 Responsibility 2 Responsibility 2 Responsibility 2
+		\item Achivement 1 Achivement 1 Achivement 1 Achivement 1 Achivement 1
+		\item Achivement 2 Achivement 2 Achivement 2 Achivement 2 Achivement 2
+	\end{itemize}%
+	}
+
+\yearitem{2000}{2010}{Position 1}
+	{Company}{Place}
+    {\lipsum[75]}
+
+\end{joblist}
+
+
+\section{Education}
+\begin{joblist}
+	
+\yearitem{2015}{2020}{PhD in Deep Learning}
+    {University}{Country}{}
+
+\yearitem{2013}{2015}{MSc in Computer Science}
+    {University}{Country}
+    {\begin{itemize}
+            \item Best paper award
+            \item GPA 4/4 with Honors
+        \end{itemize}}
+
+\yearitem{2010}{2013}{BSc in Mathematics}
+    {University}{Country}
+    {\begin{itemize}
+            \item GPA 4/4 with Honors
+        \end{itemize}}
+\end{joblist}
+
+
+\section{Extracurricular Activities}
+\begin{joblist}
+\yearitem{2013}{2015}{President}
+	{Student association}{University}
+    {\lipsum[66]}
+\yearitem{2010}{6 months}{Scientific writer}
+    {Web portal}{}
+    {\lipsum[66]}
+\end{joblist}
+
+
+\switchcolumn
+
+
+\vspace{-0.5\baselineskip}
+\section{Personal Info}
+\makecontact
+
+
+\section{Skills}
+
+\begin{skills}
+\item{Tech stack}
+    {Python SciKit Pandas PyTorch Tensorflow
+	C++ AWS GCP Git SQL Docker }
+\item{Machine learning}
+	{Supervised Unsupervised Reinforcement Deep\,Learning 
+    Time\,series CV NLP}
+\item{Soft skills}
+	{  
+	Self-motivated
+    Leadership
+    Teamwork
+}
+\end{skills}
+
+
+\section{Languages}
+\begin{languages}
+    \item{English}{Fluent}	
+    \item{Spanish}{Intermediate}
+    \item{Esperanto}{Mother tongue}
+\end{languages}
+
+
+\section{Referees}
+\begin{referees}
+\item{Name Surname}{Professor}
+    {University}{name.surname@uni.com}
+\item{Name Surname}{Position}
+    {Company}{name.surname@xxx.com}
+\item{Name Surname}{Position}
+    {Company}{name.surname@yyy.com}
+\end{referees}
+
+\end{paracol}
+
+
+\newpage
+
+
+\section{Oral talks}
+\begin{eventlist}
+\yearitem{2021}{Talk title talk title talk title}
+\yearitem{2020}{Talk title talk title talk title}
+\end{eventlist}
+
+
+% Publications
+%
+%% Manual or entries from *.bib file
+%
+%\section{Publications manual / semi-manual from *.bib}
+%\begin{publications}
+%\yearitem{2022}
+%{N. Surname, N. Surname2, and N. Surname3. Manual article Manual article Manual article. Journal, 60(5):100–105,
+%Jan. 1, 2015}
+%\bibtexitem{article4}
+%\bibtexitem{article5}
+%\end{publications}
+
+% Automatic
+\nocite{*}
+\printbibtabular[title=Publications from *.bib ]
+
+\end{document}
+
