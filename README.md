@@ -58,3 +58,5 @@ Insert automatically generated bibliography
 ```
 Set up the bibliography using commands from *biblatex*, e.g.
 \\addbibresource{publications.bib}.
+
+The author of the CV is boldfaced in the publication list.
