@@ -22,7 +22,7 @@ install: techcv.cls
 
 pdf: ${CV}.tex
 ifdef LATEXMK
-	${LATEXMK} -lualatex -use-make $<
+	${LATEXMK} $<
 else
 	${COMPILER} -interaction=nonstopmode -file-line-error  --shell-escape -jobname=CV $<
 	${BIBCOMPILER} ${CV}
