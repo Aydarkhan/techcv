@@ -122,25 +122,37 @@ isbn=false,url=false,eprint=false,related=false]{biblatex}
 \newcommand\visa[1]{\renewcommand\@visa{{\bfseries\color{red}#1}}}
 \newcommand\@visa{}
 
-\renewrobustcmd*\author[3]{
-  \gdef\@author{#2 #1}
-  \def\lastname{#1}%
-  \def\firstname{#2}%
-  \def\firstinit{#3}}
+\renewrobustcmd*\author[4][]{
+  \ifstrempty{#1}
+  {\gdef\@author{#3 #2}}
+  {\gdef\@author{#3 #2, #1}}
+  \def\degree{#1}%
+  \def\lastname{#2}%
+  \def\firstname{#3}%
+  \def\firstinit{#4}}
 
 \newcommand\linkedin[1]{
-  \renewcommand\@linkedin{
+  \renewcommand\@linkedin{%
   \href{https://www.linkedin.com/in/#1}
-  {\raisebox{-.2\height}{\linkedinlogo} #1}
+  {\raisebox{-.2\height}{\linkedinlogo} #1}%
 }
 }
 \newcommand\@linkedin{}
+
+\newcommand\googlescholar[1]{
+	\renewcommand\@googlescholar{%
+  \href{#1}
+	{\raisebox{-.2\height}{\gscholarlogo} \firstname~\lastname}
+}
+}
+\newcommand\@googlescholar
 
 \newcommand\@contactinfo{
   \vspace*{-0.5\baselineskip}
   \@visa \par
   \@email \par
-  \@linkedin
+  \@linkedin \par 
+	\@googlescholar
   }
 
 \renewcommand\maketitle{\par
@@ -163,11 +175,11 @@ isbn=false,url=false,eprint=false,related=false]{biblatex}
   \global\let\maketitle\relax
   \global\let\@maketitle\relax
   \global\let\@thanks\@empty
-  \global\let\@author\@empty
+	\global\let\@author\@empty
   \global\let\@date\@empty
   \global\let\@title\@empty
   \global\let\title\relax
-  \global\let\author\relax
+	\global\let\author\relax
   \global\let\date\relax
   \global\let\and\relax
   \global\let\@position\@empty
@@ -193,6 +205,8 @@ isbn=false,url=false,eprint=false,related=false]{biblatex}
   \global\let\email\relax
   \global\let\@linkedin\@empty
   \global\let\linkedin\relax
+  \global\let\@googlescholar\@empty
+  \global\let\googlescholar\relax
   \global\let\@visa\@empty
   \global\let\visa\relax
   \global\let\@contactinfo\@empty
@@ -406,3 +420,18 @@ isbn=false,url=false,eprint=false,related=false]{biblatex}
 \end{scope}
 \end{tikzpicture}
 }
+
+\newcommand\gscholarlogo{%
+\definecolor{c4285f4}{RGB}{66,133,244}%
+\definecolor{c356ac3}{RGB}{53,106,195}%
+\definecolor{ca0c3ff}{RGB}{160,195,255}%
+\definecolor{c76a7fa}{RGB}{118,167,250}%
+\def \globalscale {0.03}%
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-\globalscale, xscale=\globalscale, inner sep=0pt, outer sep=0pt]
+\path[fill=c4285f4] (256.0000,411.1200) -- (0.0000,202.6670) -- (256.0000,0.0000) -- cycle;
+\path[fill=c356ac3] (256.0000,411.1200) -- (512.0000,202.6670) -- (256.0000,0.0000) -- cycle;
+\path[fill=ca0c3ff] (256.0000,362.6670) circle (4.2145cm);
+\path[fill=c76a7fa] (121.0370,298.6670) .. controls (145.0050,248.2140) and (196.4290,213.3330) .. (256.0000,213.3330) .. controls (315.5710,213.3330) and (366.9950,248.2140) .. (390.9630,298.6670) -- (121.0370,298.6670) -- cycle;
+\end{tikzpicture}
+}
+
